@@ -1,6 +1,7 @@
+# principal/urls.py
 from django.urls import path
-from .views import principal  # ✅ Importe a view corretamente
+from . import views
 
 urlpatterns = [
-    path('', principal, name='principal'),  # ✅ Defina a URL corretamente
+    path('', views.index, name='index'),  # URL da página inicial
 ]
