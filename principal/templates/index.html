@@ -33,28 +33,32 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
-
+                            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contatos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'pricing' %}">Preços</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'faq' %}">FAQ</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">Blog</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-
+                                    <li><a class="dropdown-item" href="{% url 'blog-home' %}">Blog Inicio</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'blog-post' %}">Blog Posts</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
                                     <li><a class="dropdown-item" href="{% url 'index' %}">Portfolio Overview</a></li>
-
+                                    <li><a class="dropdown-item" href="{% url 'portfolio-item' %}">Portfolio Item</a></li>
                                 </ul>
                             </li>
-
+                            <li class="nav-item"><a class="nav-link" href="{% url 'perfil-fotografo' %}">Dashboard</a></li>
                         </ul>
                         {% if user.is_authenticated %}
     <!-- Botão "Sair" (Logout) -->
-
+    <a href="{% url 'logout' %}" class="btn btn-danger">Sair</a>
 {% else %}
     <!-- Botão "Entrar" (Login) -->
-
+    <a href="{% url 'login' %}" class="btn btn-success">Entrar</a>
 {% endif %}
                     </div>
                 </div>
